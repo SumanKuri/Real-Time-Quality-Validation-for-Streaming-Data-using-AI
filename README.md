@@ -1,34 +1,74 @@
 # Real-Time Fraud Detection in Financial Transactions
 
-## Overview
+This project continuously monitors **financial transactions** to detect **fraudulent activities** in real-time using **AI-based anomaly detection (Isolation Forest)**. The system simulates transactions, validates them using an AI model, and provides a **real-time dashboard** for monitoring.
 
-This project implements a real-time fraud detection system for financial transactions using an AI-based anomaly detection technique, specifically the **Isolation Forest** model. The system continuously monitors financial transactions, detects anomalies, and flags potentially fraudulent activities in real-time.
+---
 
-The tool can be used by financial institutions to prevent fraudulent transactions and safeguard against financial losses.
+## 🔧 Installation Guide
 
-## Features
+### 1️⃣ Prerequisites
+Ensure you have the following installed:
+- **Python (3.8 or later)**: [Download Python](https://www.python.org/downloads/)
+- **pip (Python package manager)**
+- **Git (optional, for cloning repository)**
 
-- **Real-time Transaction Monitoring**: Continuously simulates incoming financial transactions and detects any anomalies.
-- **Anomaly Detection**: The system uses the **Isolation Forest** algorithm to identify potentially fraudulent activities based on transaction patterns.
-- **Interactive Dashboard**: Provides a real-time dashboard that displays:
-  - Latest transactions and their fraud detection status.
-  - Transaction trends over time.
-  - Recently detected fraudulent transactions.
-- **Historical Data**: Keeps a log of past transactions, which helps in monitoring the status of previously flagged anomalies.
+### 2️⃣ Clone the Repository (Optional)
+```sh
+$ git clone https://github.com/your-username/real-time-fraud-detection.git
+$ cd real-time-fraud-detection
+```
 
-## How it Works
+### 3️⃣ Create a Virtual Environment (Recommended)
+```sh
+$ python -m venv fraud_env
+$ source fraud_env/bin/activate  # On macOS/Linux
+$ fraud_env\Scripts\activate  # On Windows
+```
 
-1. **Transaction Generation**: The system generates random simulated transactions with details like amount, transaction type (credit/debit), and balance after the transaction.
-2. **Data Preprocessing**: Transaction data is preprocessed, ensuring values (amount, balance) stay within valid ranges.
-3. **AI Model**: The Isolation Forest model is trained on randomly generated historical data to detect outliers (fraudulent transactions). The model assigns a fraud status to each incoming transaction.
-4. **Real-Time Monitoring**: Transactions are validated as they come in, and the results are displayed on the dashboard.
+### 4️⃣ Install Required Dependencies
+```sh
+$ pip install -r requirements.txt
+```
+**OR** install dependencies manually:
+```sh
+$ pip install streamlit pandas scikit-learn
+```
 
-## Installation
+---
 
-To run this project locally, follow the steps below.
+## 🚀 Running the Application
+```sh
+$ streamlit run app.py
+```
 
-### 1. Clone the repository
+After running the command, the application will open in your browser at:
+```
+http://localhost:8501
+```
 
-```bash
-git clone https://github.com/<your-username>/real-time-fraud-detection.git
-cd real-time-fraud-detection
+---
+
+## 🛠️ Features
+- **Simulates real-time financial transactions** (Credit/Debit, amount, balance, etc.)
+- **AI-based anomaly detection** using the **Isolation Forest model**
+- **Real-time transaction monitoring dashboard**
+- **Charts for transaction trends**
+- **Displays fraudulent transactions for review**
+
+---
+
+## 📂 Project Structure
+```
+real-time-fraud-detection/
+│── app.py                # Main Streamlit application
+│── requirements.txt      # Required dependencies
+│── README.md             # Documentation
+│── fraud_env/            # Virtual environment (if created)
+```
+
+---
+
+## 🤝 Contributing
+Feel free to submit issues or pull requests if you have any improvements or bug fixes.
+
+Happy coding! 🚀
